@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 7385876494041089229}
   - component: {fileID: 1320799511065792195}
   - component: {fileID: 6931142429190822244}
+  - component: {fileID: 6300658997514724109}
   m_Layer: 0
-  m_Name: Player1
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,14 +99,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  UpText: {fileID: 0}
-  DownText: {fileID: 0}
-  RightText: {fileID: 0}
-  LeftText: {fileID: 0}
-  Up: 0
-  Down: 0
-  Right: 0
-  Left: 0
+  controlSchemesPerLevel:
+  - Up:
+      key: 119
+      actions: 00000000
+    Down:
+      key: 115
+      actions: 01000000
+    Right:
+      key: 100
+      actions: 03000000
+    Left:
+      key: 97
+      actions: 02000000
+    Special1:
+      key: 0
+      actions: 
+    Special2:
+      key: 0
+      actions: 
+    AllActions: []
+  - Up:
+      key: 0
+      actions: 
+    Down:
+      key: 0
+      actions: 
+    Right:
+      key: 0
+      actions: 
+    Left:
+      key: 0
+      actions: 
+    Special1:
+      key: 0
+      actions: 
+    Special2:
+      key: 0
+      actions: 
+    AllActions: []
+  controlUI: {fileID: 0}
 --- !u!136 &6931142429190822244
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -129,3 +162,30 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &6300658997514724109
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4605843369352199751}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 84
+  m_CollisionDetection: 1
