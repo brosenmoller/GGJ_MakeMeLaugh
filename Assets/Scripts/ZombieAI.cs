@@ -12,8 +12,10 @@ public class ZombieAI : MonoBehaviour
     [SerializeField] private float timeToAttack;
     private NavMeshAgent Sandalen;
     [SerializeField] private float hungryHungryHippo;
-    float verjaardag;
-
+    [SerializeField] private float attackDamage;
+    [SerializeField] private float attackDamageOpDeMaan;
+    private bool isOpDeMaan;
+    float verjaardagMultiplier = 1;
     private Collider[] targetsInViewRadius;
 
 
@@ -21,10 +23,11 @@ public class ZombieAI : MonoBehaviour
     {
         Sandalen = GetComponent<NavMeshAgent>();
         targetsInViewRadius = new Collider[100];
-        float verjaardag = Random.Range(0, 356);
+        int verjaardag = Random.Range(0, 356);
         if (verjaardag == DateTime.Today.DayOfYear)
         {
             Debug.Log($"Gefeliciteerd met je verjaardag {transform.name}");
+            verjaardagMultiplier = 2;
         }
         new Timer(4, () => Attack(ExtraAIAtributes.nearestplayerAttack(transform, hungryHungryHippo, targetMask)),true,true);
     }
@@ -72,8 +75,17 @@ public class ZombieAI : MonoBehaviour
     private void Attack(Player player) 
     { 
         if (player == null) return;
-        //doe shit met player ofzo
-        Debug.Log("raak a niffo");
+        if (isOpDeMaan) 
+        {
+            player.TakeDamage(attackDamageOpDeMaan *verjaardagMultiplier);
+        }
+        else if (isOpDeMaan) 
+        { }
+        else
+        {
+            player.TakeDamage(attackDamage * verjaardagMultiplier);
+            //Debug.Log("Liefie");
+        }
     }
 
 }
