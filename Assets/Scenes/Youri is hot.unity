@@ -1392,6 +1392,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: i love soup 007
       objectReference: {fileID: 0}
+    - target: {fileID: 759194377213615312, guid: b00609685e89c9e418adf6af581512d9,
+        type: 3}
+      propertyPath: Zombie
+      value: 
+      objectReference: {fileID: 1034274033}
     - target: {fileID: 6596929804550160767, guid: b00609685e89c9e418adf6af581512d9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2412,6 +2417,12 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 0af658b0c2e1a9c48a11a4d9d6740765, type: 2}
   m_BuildHeightMesh: 0
+--- !u!1 &1034274033 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 196110438739058807, guid: b00609685e89c9e418adf6af581512d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 520297221}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1076074455
 GameObject:
   m_ObjectHideFlags: 0
@@ -3202,16 +3213,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Zombie broer
-      objectReference: {fileID: 0}
-    - target: {fileID: 196110438739058807, guid: d76bf67a670389c4caaee7673fa9da5c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2036547233256866725, guid: d76bf67a670389c4caaee7673fa9da5c,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6596929804550160767, guid: d76bf67a670389c4caaee7673fa9da5c,
         type: 3}
