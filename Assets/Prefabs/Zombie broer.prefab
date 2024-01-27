@@ -93,6 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67e79444cfe7fc4aad75f90f711eeb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 5016161831742613598}
   targetMask:
     serializedVersion: 2
     m_Bits: 8
@@ -100,7 +101,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 19
   viewRadius: 100
-  timeToAttack: 0
+  timeToAttack: 1
   hungryHungryHippo: 1.4
   attackDamage: 10
   attackDamageOpDeMaan: 15
@@ -632,6 +633,12 @@ PrefabInstance:
 --- !u!4 &1404226223459660324 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 79822eb59c87a7f4eb1ee9427bd6d6af,
+    type: 3}
+  m_PrefabInstance: {fileID: 1510510388752717263}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5016161831742613598 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 79822eb59c87a7f4eb1ee9427bd6d6af,
     type: 3}
   m_PrefabInstance: {fileID: 1510510388752717263}
   m_PrefabAsset: {fileID: 0}

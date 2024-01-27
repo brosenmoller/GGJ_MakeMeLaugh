@@ -5,6 +5,7 @@ using Random = UnityEngine.Random;
 
 public class ZombieAI : MonoBehaviour
 {
+    [SerializeField] private Animator animator;
     [SerializeField] private LayerMask targetMask;
     [SerializeField] private LayerMask obstacleMask;
     [SerializeField] float viewRadius;
@@ -85,6 +86,8 @@ public class ZombieAI : MonoBehaviour
             player.TakeDamage(attackDamage * verjaardagMultiplier);
             //Debug.Log("Liefie");
         }
+
+        animator.SetTrigger("Attack");
     }
 
 }
