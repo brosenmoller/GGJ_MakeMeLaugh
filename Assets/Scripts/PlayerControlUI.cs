@@ -9,5 +9,9 @@ public class PlayerControlUI : MonoBehaviour
     public TextMeshProUGUI DownText;
     public TextMeshProUGUI RightText;
     public TextMeshProUGUI LeftText;
+    public TextMeshProUGUI Special1Text;
+    public TextMeshProUGUI Special2Text;
     public Slider levelSlider;
+    public Slider healthSlider;
+    public TextMeshProUGUI levelIndicator;
 }

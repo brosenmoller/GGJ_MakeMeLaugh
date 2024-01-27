@@ -1,33 +1,98 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class Player : MonoBehaviour
 {
     [Header("Player Control")]
     [SerializeField] private float moveSpeed;
+    [SerializeField] private PlayerControlScheme[] controlSchemesPerLevel;
 
     [Header("References")]
-    public TextMeshProUGUI UpText;
-    public TextMeshProUGUI DownText;
-    public TextMeshProUGUI RightText;
-    public TextMeshProUGUI LeftText;
+    public PlayerControlUI controlUI;
 
-    [HideInInspector] public KeyCode Up;
-    [HideInInspector] public KeyCode Down;
-    [HideInInspector] public KeyCode Right;
-    [HideInInspector] public KeyCode Left;
-
+    private Rigidbody rigidBody;
     private Vector2 movement;
+    private int level = 0;
+    private float xp = 0;
+
+    private readonly Dictionary<PlayerActionType, Action<Player>> actionConverter = new()
+    {
+        { PlayerActionType.Up, (Player player) => { player.UpAction(); } },
+        { PlayerActionType.Down, (Player player) => { player.DownAction(); } },
+        { PlayerActionType.Left, (Player player) => { player.LeftAction(); } },
+        { PlayerActionType.Right, (Player player) => { player.RightAction(); } },
+    };
+
+    private void Awake()
+    {
+        rigidBody = GetComponent<Rigidbody>();
+        controlUI.titleText.text = gameObject.name;
+        UpdateUI();
+
+        foreach (PlayerControlScheme controlScheme in controlSchemesPerLevel)
+        {
+            controlScheme.Setup();
+        }
+    }
 
     private void Update()
     {
         movement = Vector2.zero;
 
-        if (Input.GetKey(Up)) { movement.x -= 1; }
-        if (Input.GetKey(Down)) { movement.x += 1; }
-        if (Input.GetKey(Right)) { movement.y += 1; }
-        if (Input.GetKey(Left)) { movement.y -= 1; }
+        foreach (PlayerControlScheme.PlayerAction playerAction in controlSchemesPerLevel[level].AllActions) 
+        {
+            if (Input.GetKey(playerAction.key))
+            {
+                foreach (PlayerActionType playerActionType in playerAction.actions)
+                {
+                    actionConverter[playerActionType](this);
+                }
+            }
+        }
 
-        transform.Translate(moveSpeed * Time.deltaTime * new Vector3(movement.x, 0, movement.y));
+        rigidBody.velocity = moveSpeed * new Vector3(movement.x, 0, movement.y);
+    }
+
+    public void LevelUp()
+    {
+        if (xp < 1f) { return; }
+        if (level == controlSchemesPerLevel.Length - 1) { return; }
+
+        xp = 0;
+        level++;
+    }
+
+    private void UpdateUI()
+    {
+        controlUI.UpText.text = controlSchemesPerLevel[level].Up.key.ToString();
+        controlUI.DownText.text = controlSchemesPerLevel[level].Down.key.ToString();
+        controlUI.RightText.text = controlSchemesPerLevel[level].Right.key.ToString();
+        controlUI.LeftText.text = controlSchemesPerLevel[level].Left.key.ToString();
+
+        controlUI.Special1Text.text = controlSchemesPerLevel[level].Special1.key.ToString();
+        controlUI.Special2Text.text = controlSchemesPerLevel[level].Special2.key.ToString();
+        controlUI.levelSlider.value = xp;
+        controlUI.levelIndicator.text = level.ToString();
+    }
+
+    public void UpAction()
+    {
+        movement.y += 1;
+    }
+
+    public void DownAction()
+    {
+        movement.y -= 1;
+    }
+
+    public void RightAction()
+    {
+        movement.x += 1;
+    }
+
+    public void LeftAction()
+    {
+        movement.x -= 1;
     }
 }
