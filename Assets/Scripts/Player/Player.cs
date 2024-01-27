@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [Header("Player Control")]
+    [Header("Base Stats")]
+    [SerializeField] private float maxHealth;
+    [SerializeField] private float damage;
     [SerializeField] private float moveSpeed;
+
+    [Header("Player Control")]
     [SerializeField] private PlayerControlScheme[] controlSchemesPerLevel;
 
     [Header("References")]
@@ -51,7 +55,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        rigidBody.velocity = moveSpeed * new Vector3(movement.x, 0, movement.y);
+        rigidBody.velocity = moveSpeed * new Vector3(movement.x, 0, movement.y).normalized;
     }
 
     public void LevelUp()

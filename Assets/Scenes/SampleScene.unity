@@ -866,10 +866,30 @@ PrefabInstance:
       propertyPath: controlUI
       value: 
       objectReference: {fileID: 1229525234}
+    - target: {fileID: 1320799511065792195, guid: 045f60a03419d6b48b2001d9778f37c9,
+        type: 3}
+      propertyPath: controlSchemesPerLevel.Array.data[0].Up.key
+      value: 273
+      objectReference: {fileID: 0}
+    - target: {fileID: 1320799511065792195, guid: 045f60a03419d6b48b2001d9778f37c9,
+        type: 3}
+      propertyPath: controlSchemesPerLevel.Array.data[0].Down.key
+      value: 274
+      objectReference: {fileID: 0}
+    - target: {fileID: 1320799511065792195, guid: 045f60a03419d6b48b2001d9778f37c9,
+        type: 3}
+      propertyPath: controlSchemesPerLevel.Array.data[0].Left.key
+      value: 276
+      objectReference: {fileID: 0}
+    - target: {fileID: 1320799511065792195, guid: 045f60a03419d6b48b2001d9778f37c9,
+        type: 3}
+      propertyPath: controlSchemesPerLevel.Array.data[0].Right.key
+      value: 275
+      objectReference: {fileID: 0}
     - target: {fileID: 4605843369352199751, guid: 045f60a03419d6b48b2001d9778f37c9,
         type: 3}
       propertyPath: m_Name
-      value: Player4
+      value: Bard
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1216,10 +1236,30 @@ PrefabInstance:
       propertyPath: controlUI
       value: 
       objectReference: {fileID: 1009261917}
+    - target: {fileID: 1320799511065792195, guid: 045f60a03419d6b48b2001d9778f37c9,
+        type: 3}
+      propertyPath: controlSchemesPerLevel.Array.data[0].Up.key
+      value: 105
+      objectReference: {fileID: 0}
+    - target: {fileID: 1320799511065792195, guid: 045f60a03419d6b48b2001d9778f37c9,
+        type: 3}
+      propertyPath: controlSchemesPerLevel.Array.data[0].Down.key
+      value: 107
+      objectReference: {fileID: 0}
+    - target: {fileID: 1320799511065792195, guid: 045f60a03419d6b48b2001d9778f37c9,
+        type: 3}
+      propertyPath: controlSchemesPerLevel.Array.data[0].Left.key
+      value: 106
+      objectReference: {fileID: 0}
+    - target: {fileID: 1320799511065792195, guid: 045f60a03419d6b48b2001d9778f37c9,
+        type: 3}
+      propertyPath: controlSchemesPerLevel.Array.data[0].Right.key
+      value: 108
+      objectReference: {fileID: 0}
     - target: {fileID: 4605843369352199751, guid: 045f60a03419d6b48b2001d9778f37c9,
         type: 3}
       propertyPath: m_Name
-      value: Player3
+      value: Warrior
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1321,10 +1361,30 @@ PrefabInstance:
       propertyPath: controlUI
       value: 
       objectReference: {fileID: 1125408609}
+    - target: {fileID: 1320799511065792195, guid: 045f60a03419d6b48b2001d9778f37c9,
+        type: 3}
+      propertyPath: controlSchemesPerLevel.Array.data[0].Up.key
+      value: 103
+      objectReference: {fileID: 0}
+    - target: {fileID: 1320799511065792195, guid: 045f60a03419d6b48b2001d9778f37c9,
+        type: 3}
+      propertyPath: controlSchemesPerLevel.Array.data[0].Down.key
+      value: 118
+      objectReference: {fileID: 0}
+    - target: {fileID: 1320799511065792195, guid: 045f60a03419d6b48b2001d9778f37c9,
+        type: 3}
+      propertyPath: controlSchemesPerLevel.Array.data[0].Left.key
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 1320799511065792195, guid: 045f60a03419d6b48b2001d9778f37c9,
+        type: 3}
+      propertyPath: controlSchemesPerLevel.Array.data[0].Right.key
+      value: 98
+      objectReference: {fileID: 0}
     - target: {fileID: 4605843369352199751, guid: 045f60a03419d6b48b2001d9778f37c9,
         type: 3}
       propertyPath: m_Name
-      value: Player2
+      value: Shield
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1636,7 +1696,7 @@ GameObject:
   - component: {fileID: 1520547649}
   - component: {fileID: 1520547648}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

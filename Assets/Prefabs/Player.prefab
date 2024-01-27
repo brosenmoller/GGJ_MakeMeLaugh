@@ -138,6 +138,9 @@ MonoBehaviour:
       key: 0
       actions: 
     AllActions: []
+  maxHealth: 20
+  damage: 10
+  speed: 10
   controlUI: {fileID: 0}
 --- !u!136 &6931142429190822244
 CapsuleCollider:
