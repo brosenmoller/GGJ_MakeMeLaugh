@@ -5,7 +5,6 @@ public abstract class PlayerAbility : MonoBehaviour
 {
     public Rigidbody RigidBody { get; private set; }
     public PlayerController PlayerController { get; private set; }
-    [SerializeField] protected Transform visuals;
 
     private void Awake()
     {

@@ -33,7 +33,7 @@ public class Fireball : MonoBehaviour
     {
         elapsedTime = 0;
         speed = startSpeed;
-        Invoke("StartExplosion", aliveTime);
+        Invoke(nameof(StartExplosion), aliveTime);
     }
 
     public void SetUpFireBall(int damage, float knockBackForce, Vector3 direction, PlayerController playerController)
@@ -68,7 +68,7 @@ public class Fireball : MonoBehaviour
     {
         anim.SetTrigger(explodeParameter);
         exploded = true;
-        rb.velocity = Vector2.zero;
+        rb.velocity = Vector3.zero;
     }
 
     public void Explode()

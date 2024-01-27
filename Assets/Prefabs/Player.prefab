@@ -587,7 +587,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 50
   damage: 1.5
-  moveSpeed: 10
+  moveSpeed: 20
+  playerRotationSpeed: 10
   controlSchemesPerLevel:
   - Up:
       key: 119
@@ -609,6 +610,7 @@ MonoBehaviour:
       actions: 
     AllActions: []
   controlUI: {fileID: 0}
+  Visuals: {fileID: 0}
   movement: {x: 0, y: 0}
   lastDirection: {x: 0, y: 0, z: 0}
   CanMove: 1
@@ -624,9 +626,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 747adce8081b1ab4b86100d42cac8389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visuals: {fileID: 1457300376094893431}
-  dashForce: 20
-  dashActiveTime: 0.5
+  dashForce: 70
+  dashActiveTime: 0.2
   dashCooldownTime: 0.2
 --- !u!114 &7782889668489900903
 MonoBehaviour:
@@ -640,12 +641,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94c0fffa1aab5c04898c8a08a9688c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visuals: {fileID: 1457300376094893431}
   baseDamage: 10
   startAttackCooldown: 0.5
-  attackRadius: 2.19
-  attackOffset: 2.64
-  knockBackForce: 0
+  attackRadius: 3.5
+  attackOffset: 3
+  knockBackForce: 10
 --- !u!136 &6931142429190822244
 CapsuleCollider:
   m_ObjectHideFlags: 0

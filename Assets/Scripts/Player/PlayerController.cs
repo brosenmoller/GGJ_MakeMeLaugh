@@ -9,20 +9,23 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float damage;
     [SerializeField] private float moveSpeed;
 
+    [Header("Settings")]
+    [SerializeField] private float playerRotationSpeed;
+
     [Header("Player Control")]
     [SerializeField] private PlayerControlScheme[] controlSchemesPerLevel;
 
     [Header("References")]
     public PlayerControlUI controlUI;
+    public Transform Visuals;
 
     private Rigidbody rigidBody;
     [HideInInspector] public Vector2 movement;
-    [HideInInspector] public Vector3 lastDirection;
+    [HideInInspector] public Vector3 lastDirection = Vector3.forward;
     [HideInInspector] public bool CanMove = true;
     private int level = 0;
     private float xp = 0;
     private float health;
-
 
     private PlayerDash dash;
     private PlayerStab stab;
@@ -72,13 +75,19 @@ public class PlayerController : MonoBehaviour
 
         if (movement != Vector2.zero)
         {
-            lastDirection = movement;
+            lastDirection = direction;
         }
 
         if (CanMove)
         {
             rigidBody.velocity = moveSpeed * direction;
         }
+
+        Visuals.forward = Vector3.Slerp(
+            Visuals.forward,
+            lastDirection,
+            Time.deltaTime * playerRotationSpeed
+        );
     }
 
     public void TakeDamage(float damage)
