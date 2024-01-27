@@ -7,7 +7,7 @@ public class ZombieAI : MonoBehaviour
     [SerializeField] private LayerMask targetMask;
     [SerializeField] private LayerMask obstacleMask;
     [SerializeField] float viewRadius;
-    private NavMeshAgent Sandalen;
+    private NavMeshAgent agent;
     private List<GameObject> hitPlayers = new List<GameObject>();
 
     private Collider[] targetsInViewRadius;
@@ -30,26 +30,24 @@ public class ZombieAI : MonoBehaviour
 
     private void Awake()
     {
-        Sandalen = GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
         targetsInViewRadius = new Collider[100];
     }
 
     private void Update()
     {
-        if(Sandalen == null) 
+        if(agent == null) 
         {
             return;
         }
 
-        Debug.Log(hitPlayers.Count);
         if (hitPlayers.Count > 0)
         {
-            Sandalen.SetDestination(transform.position);
+            agent.SetDestination(transform.position);
             return;
         }
         var path = FindBestPath();
-        Sandalen.SetPath(path);
-
+        agent.SetPath(path);
     }
 
     private NavMeshPath FindBestPath()
@@ -62,7 +60,7 @@ public class ZombieAI : MonoBehaviour
         for (int i = 0; i < numberOfDetectedColliders; i++)
         {
             var newPath = new NavMeshPath();
-            Sandalen.CalculatePath(targetsInViewRadius[i].transform.position, newPath);
+            agent.CalculatePath(targetsInViewRadius[i].transform.position, newPath);
             float newPathLength = ExtraAIAtributes.CalcPathDistance(newPath);
             if (newPath.status == NavMeshPathStatus.PathComplete && (shortestPathLength == null || shortestPathLength > newPathLength)) 
             { 

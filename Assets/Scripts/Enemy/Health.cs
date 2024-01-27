@@ -15,7 +15,7 @@ public class Health : MonoBehaviour, IDamagable
         normalMaterial = meshRenderer.material;
     }
 
-    public void TakeDamage(float damage, Player player)
+    public void TakeDamage(float damage, PlayerController player)
     {
         health -= damage;
 

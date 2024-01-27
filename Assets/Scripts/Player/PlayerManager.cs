@@ -5,7 +5,7 @@ public class PlayerManager : MonoBehaviour
 {
     [Header("minimum of 4 * playercount")]
     [SerializeField] private KeyCode[] availableKeys;
-    [SerializeField] private Player[] players;
+    [SerializeField] private PlayerController[] players;
 
     private void Awake()
     {

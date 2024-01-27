@@ -11,6 +11,8 @@ public enum PlayerActionType
 
     Fireball = 4,
     Firepit = 5,
+    Dash = 6,
+    Stab = 7,
 }
 
 [Serializable]
