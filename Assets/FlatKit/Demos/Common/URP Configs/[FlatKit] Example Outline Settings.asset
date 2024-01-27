@@ -44,13 +44,14 @@ Material:
     - _ColorThresholdMin: 0
     - _DepthThresholdMax: 0.1
     - _DepthThresholdMin: 0.1
+    - _FadeRangeEnd: 50
+    - _FadeRangeStart: 10
     - _NormalThresholdMax: 2
     - _NormalThresholdMin: 0
     - _Thickness: 1
     m_Colors:
     - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,6 +67,9 @@ MonoBehaviour:
   edgeColor: {r: 1, g: 1, b: 1, a: 1}
   thickness: 1
   resolutionInvariant: 0
+  fadeWithDistance: 0
+  fadeRangeStart: 10
+  fadeRangeEnd: 50
   useDepth: 0
   minDepthThreshold: 0.1
   maxDepthThreshold: 0.1

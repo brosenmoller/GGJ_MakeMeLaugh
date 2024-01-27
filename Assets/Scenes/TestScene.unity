@@ -2076,7 +2076,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Visuals
       value: 
-      objectReference: {fileID: 1873243783}
+      objectReference: {fileID: 0}
     - target: {fileID: 9157438368393493075, guid: 045f60a03419d6b48b2001d9778f37c9,
         type: 3}
       propertyPath: controlUI
@@ -3603,12 +3603,6 @@ Transform:
   - {fileID: 1559872556}
   m_Father: {fileID: 738704908}
   m_LocalEulerAnglesHint: {x: 88.933, y: 0, z: 0}
---- !u!4 &1246553376 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1457300376094893431, guid: 045f60a03419d6b48b2001d9778f37c9,
-    type: 3}
-  m_PrefabInstance: {fileID: 2299828069209689589}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1283254631
 GameObject:
   m_ObjectHideFlags: 0
@@ -4078,7 +4072,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Visuals
       value: 
-      objectReference: {fileID: 1867092502}
+      objectReference: {fileID: 0}
     - target: {fileID: 9157438368393493075, guid: 045f60a03419d6b48b2001d9778f37c9,
         type: 3}
       propertyPath: controlUI
@@ -5305,11 +5299,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie broer
       objectReference: {fileID: 0}
-    - target: {fileID: 196110438739058807, guid: d76bf67a670389c4caaee7673fa9da5c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6596929804550160767, guid: d76bf67a670389c4caaee7673fa9da5c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5467,18 +5456,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!4 &1867092502 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1457300376094893431, guid: 045f60a03419d6b48b2001d9778f37c9,
-    type: 3}
-  m_PrefabInstance: {fileID: 1313754126}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1873243783 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1457300376094893431, guid: 045f60a03419d6b48b2001d9778f37c9,
-    type: 3}
-  m_PrefabInstance: {fileID: 584084399}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1883284984 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4981445406474608867, guid: 160ee25efa9d8ed4e952464abe755289,
@@ -5740,7 +5717,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Visuals
       value: 
-      objectReference: {fileID: 1246553376}
+      objectReference: {fileID: 0}
     - target: {fileID: 9157438368393493075, guid: 045f60a03419d6b48b2001d9778f37c9,
         type: 3}
       propertyPath: controlUI
