@@ -14,4 +14,5 @@ public class PlayerControlUI : MonoBehaviour
     public Slider levelSlider;
     public Slider healthSlider;
     public TextMeshProUGUI levelIndicator;
+    public Image lvlUpIndicator;
 }
