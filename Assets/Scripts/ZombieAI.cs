@@ -9,6 +9,7 @@ public class ZombieAI : MonoBehaviour
     [SerializeField] private LayerMask targetMask;
     [SerializeField] private LayerMask obstacleMask;
     [SerializeField] float viewRadius;
+    [SerializeField] private float timeToAttack;
     private NavMeshAgent Sandalen;
     [SerializeField] private float hungryHungryHippo;
     float verjaardag;
@@ -25,6 +26,7 @@ public class ZombieAI : MonoBehaviour
         {
             Debug.Log($"Gefeliciteerd met je verjaardag {transform.name}");
         }
+        new Timer(4, () => Attack(ExtraAIAtributes.nearestplayerAttack(transform, hungryHungryHippo, targetMask)),true,true);
     }
 
     private void Update()
@@ -71,6 +73,7 @@ public class ZombieAI : MonoBehaviour
     { 
         if (player == null) return;
         //doe shit met player ofzo
+        Debug.Log("raak a niffo");
     }
 
 }
