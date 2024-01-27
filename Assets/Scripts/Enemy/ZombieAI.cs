@@ -86,8 +86,6 @@ public class ZombieAI : MonoBehaviour
             player.TakeDamage(attackDamage * verjaardagMultiplier);
             //Debug.Log("Liefie");
         }
-
-        animator.SetTrigger("Attack");
     }
 
 }
