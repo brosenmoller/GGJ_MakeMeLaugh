@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 826619668960612938}
   - component: {fileID: 8269599469137853886}
   - component: {fileID: 7385876494041089229}
-  - component: {fileID: 1320799511065792195}
+  - component: {fileID: 9157438368393493075}
   - component: {fileID: 6931142429190822244}
   - component: {fileID: 6300658997514724109}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1320799511065792195
+--- !u!114 &9157438368393493075
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,52 +95,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 4605843369352199751}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eac96869cb68f140a52e8387f2b8bba, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e5f1b71929c9a6439147923320782d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 10
+  damage: 10
   moveSpeed: 10
   controlSchemesPerLevel:
   - Up:
       key: 119
-      actions: 00000000
+      actions: 
     Down:
       key: 115
-      actions: 01000000
+      actions: 
     Right:
       key: 100
-      actions: 03000000
+      actions: 
     Left:
       key: 97
-      actions: 02000000
-    Special1:
-      key: 0
-      actions: 
-    Special2:
-      key: 0
-      actions: 
-    AllActions: []
-  - Up:
-      key: 0
-      actions: 
-    Down:
-      key: 0
-      actions: 
-    Right:
-      key: 0
-      actions: 
-    Left:
-      key: 0
       actions: 
     Special1:
-      key: 0
+      key: 113
       actions: 
     Special2:
-      key: 0
+      key: 101
       actions: 
     AllActions: []
-  maxHealth: 20
-  damage: 10
-  speed: 10
   controlUI: {fileID: 0}
 --- !u!136 &6931142429190822244
 CapsuleCollider:
@@ -190,5 +170,5 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 84
+  m_Constraints: 116
   m_CollisionDetection: 1

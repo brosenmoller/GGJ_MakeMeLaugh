@@ -2028,7 +2028,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4772342019791444187}
-  - component: {fileID: 6032117603357904050}
+  - component: {fileID: 4981445406474608867}
   m_Layer: 5
   m_Name: PlayerControlUI1
   m_TagString: Untagged
@@ -2065,7 +2065,7 @@ RectTransform:
   m_AnchoredPosition: {x: 50, y: -50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &6032117603357904050
+--- !u!114 &4981445406474608867
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2074,7 +2074,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6922282128831682620}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f3f3d44c970b124e847ae92ae0894ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a59a1ed0d43ecf4eb083011b6ecca34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   titleText: {fileID: 6833529528129959562}

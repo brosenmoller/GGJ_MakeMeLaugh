@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     private Vector2 movement;
     private int level = 0;
     private float xp = 0;
+    private float health;
 
     private readonly Dictionary<PlayerActionType, Action<Player>> actionConverter = new()
     {
@@ -30,6 +31,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        health = maxHealth;
         rigidBody = GetComponent<Rigidbody>();
         controlUI.titleText.text = gameObject.name;
         UpdateUI();
@@ -58,6 +60,16 @@ public class Player : MonoBehaviour
         rigidBody.velocity = moveSpeed * new Vector3(movement.x, 0, movement.y).normalized;
     }
 
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+
+        if (health < 0)
+        {
+            Debug.Log("Player Death");
+        }
+    }
+
     public void LevelUp()
     {
         if (xp < 1f) { return; }
@@ -65,6 +77,11 @@ public class Player : MonoBehaviour
 
         xp = 0;
         level++;
+    }
+
+    public void GiveXp(float xp)
+    {
+        this.xp += xp;
     }
 
     private void UpdateUI()
