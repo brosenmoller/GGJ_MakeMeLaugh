@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
 
     private PlayerDash dash;
     private PlayerStab stab;
+    private PlayerSlowZone slow;
 
     private readonly Dictionary<PlayerActionType, Action<PlayerController>> actionConverter = new()
     {
@@ -35,6 +36,7 @@ public class PlayerController : MonoBehaviour
         { PlayerActionType.Right, (PlayerController player) => { player.RightAction(); } },
         { PlayerActionType.Dash, (PlayerController player) => { player.DashAction();} },
         { PlayerActionType.Stab, (PlayerController player) => { player.StabAction();} },
+        { PlayerActionType.Slow, (PlayerController player) => { player.SlowAction();} },
     };
 
     private void Awake()
@@ -46,6 +48,7 @@ public class PlayerController : MonoBehaviour
 
        dash = GetComponent<PlayerDash>();
        stab = GetComponent<PlayerStab>();
+       slow = GetComponent<PlayerSlowZone>();
 
         foreach (PlayerControlScheme controlScheme in controlSchemesPerLevel)
         {
@@ -144,4 +147,5 @@ public class PlayerController : MonoBehaviour
     
     public void DashAction() => dash.Activate();
     public void StabAction() => stab.Activate();
+    public void SlowAction() => slow.Activate();
 }

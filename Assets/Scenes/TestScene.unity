@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.22343373, g: 0.4677888, b: 0.82514405, a: 1}
+  m_IndirectSpecularColor: {r: 0.22343385, g: 0.4677887, b: 0.82514423, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -906,7 +906,7 @@ PrefabInstance:
     - target: {fileID: 651471375010424927, guid: 160ee25efa9d8ed4e952464abe755289,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4772342019791444187, guid: 160ee25efa9d8ed4e952464abe755289,
         type: 3}
@@ -1011,12 +1011,12 @@ PrefabInstance:
     - target: {fileID: 6504625669676721603, guid: 160ee25efa9d8ed4e952464abe755289,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6504625669676721603, guid: 160ee25efa9d8ed4e952464abe755289,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6922282128831682620, guid: 160ee25efa9d8ed4e952464abe755289,
         type: 3}
@@ -1389,7 +1389,7 @@ PrefabInstance:
     - target: {fileID: 651471375010424927, guid: 160ee25efa9d8ed4e952464abe755289,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4772342019791444187, guid: 160ee25efa9d8ed4e952464abe755289,
         type: 3}
@@ -1494,12 +1494,12 @@ PrefabInstance:
     - target: {fileID: 6504625669676721603, guid: 160ee25efa9d8ed4e952464abe755289,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6504625669676721603, guid: 160ee25efa9d8ed4e952464abe755289,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6922282128831682620, guid: 160ee25efa9d8ed4e952464abe755289,
         type: 3}
@@ -4693,7 +4693,7 @@ PrefabInstance:
     - target: {fileID: 651471375010424927, guid: 160ee25efa9d8ed4e952464abe755289,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4772342019791444187, guid: 160ee25efa9d8ed4e952464abe755289,
         type: 3}
@@ -4798,12 +4798,12 @@ PrefabInstance:
     - target: {fileID: 6504625669676721603, guid: 160ee25efa9d8ed4e952464abe755289,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6504625669676721603, guid: 160ee25efa9d8ed4e952464abe755289,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6922282128831682620, guid: 160ee25efa9d8ed4e952464abe755289,
         type: 3}
@@ -5485,7 +5485,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1841896871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6138,7 +6138,7 @@ PrefabInstance:
     - target: {fileID: 651471375010424927, guid: 160ee25efa9d8ed4e952464abe755289,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4772342019791444187, guid: 160ee25efa9d8ed4e952464abe755289,
         type: 3}
@@ -6248,12 +6248,12 @@ PrefabInstance:
     - target: {fileID: 6504625669676721603, guid: 160ee25efa9d8ed4e952464abe755289,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6504625669676721603, guid: 160ee25efa9d8ed4e952464abe755289,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6922282128831682620, guid: 160ee25efa9d8ed4e952464abe755289,
         type: 3}

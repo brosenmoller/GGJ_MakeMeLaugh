@@ -1,4 +1,4 @@
-using System;
+ using System;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
@@ -10,12 +10,13 @@ public class ZombieAI : MonoBehaviour
     [SerializeField] float viewRadius;
     [SerializeField] private float timeToAttack;
     private NavMeshAgent Sandalen;
-    [SerializeField] private float hungryHungryHippo;
+    [SerializeField] private float AttackRange;
     [SerializeField] private float attackDamage;
     [SerializeField] private float attackDamageOpDeMaan;
     private bool isOpDeMaan;
     float verjaardagMultiplier = 1;
     private Collider[] targetsInViewRadius;
+    private bool canAttack = true;
 
 
     private void Awake()
@@ -28,7 +29,6 @@ public class ZombieAI : MonoBehaviour
             Debug.Log($"Gefeliciteerd met je verjaardag {transform.name}");
             verjaardagMultiplier = 2;
         }
-        new Timer(4, () => Attack(ExtraAIAtributes.nearestplayerAttack(transform, hungryHungryHippo, targetMask)),true,true);
     }
 
     private void Update()
@@ -40,14 +40,30 @@ public class ZombieAI : MonoBehaviour
 
         //ikben verlegen
 
-        if (Physics.OverlapSphere(transform.position,hungryHungryHippo,targetMask).Length > 0)
+        if (Physics.OverlapSphere(transform.position,AttackRange,targetMask).Length > 0)
         {
             Sandalen.SetDestination(transform.position);
+            if (canAttack) 
+            {
+                attack();
+                canAttack = false;
+                new Timer(timeToAttack, () => resetAttack());
+            }
             return;
         }
         var path = FindBestPath();
         Sandalen.SetPath(path);
 
+    }
+
+    public void attack() 
+    {
+        Attack(ExtraAIAtributes.nearestplayerAttack(transform, AttackRange, targetMask));
+    }
+
+    private void resetAttack()
+    {
+        canAttack = true;
     }
 
     private NavMeshPath FindBestPath()
