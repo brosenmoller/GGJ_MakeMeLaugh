@@ -46,7 +46,7 @@ public class ZombieAI : MonoBehaviour
             Sandalen.SetDestination(transform.position);
             if (canAttack) 
             {
-                attack();
+                animator.SetTrigger("Attack");
                 canAttack = false;
                 new Timer(timeToAttack, () => resetAttack());
             }
