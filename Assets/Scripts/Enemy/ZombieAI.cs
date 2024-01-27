@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
@@ -72,7 +71,7 @@ public class ZombieAI : MonoBehaviour
         return shortestPath;
     }
 
-    private void Attack(Player player) 
+    private void Attack(PlayerController player) 
     { 
         if (player == null) return;
         if (isOpDeMaan) 
@@ -102,9 +101,9 @@ public class ExtraAIAtributes
         return distance;
     }
 
-    public static Player nearestplayerAttack(Transform objectTransform, float hungryHungryHippo, LayerMask targetMask ) 
+    public static PlayerController nearestplayerAttack(Transform objectTransform, float hungryHungryHippo, LayerMask targetMask ) 
     {
-        Player swag = null;
+        PlayerController swag = null;
         float? langeJJan = null;
         Collider[] soep = Physics.OverlapSphere(objectTransform.position, hungryHungryHippo, targetMask);
         foreach (Collider collider in soep) 
@@ -112,7 +111,7 @@ public class ExtraAIAtributes
             if (Vector3.Distance(collider.transform.position, objectTransform.position) > langeJJan || langeJJan == null) 
             {
                 //patatertijd is vrijdag avond fun favct.
-                swag = collider.transform.GetComponent<Player>();
+                swag = collider.transform.GetComponent<PlayerController>();
                 if(swag == null) 
                 {
                     Debug.Log("ben jjij klloiert");

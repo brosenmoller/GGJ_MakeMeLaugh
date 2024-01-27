@@ -38,6 +38,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: bACK
+    uniqueID: 4045766787
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Fonr
+    uniqueID: 952063087
+    locked: 0
+  - name: ExtraFrond
+    uniqueID: 3356483527
     locked: 0

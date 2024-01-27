@@ -7,6 +7,7 @@ public class PlayerStab : PlayerAbility
     [SerializeField] private float startAttackCooldown;
     [SerializeField] private float attackRadius;
     [SerializeField] private float attackOffset;
+    [SerializeField] private float knockBackForce;
 
     private float attackCooldown;
     //public Animator animator;
@@ -24,7 +25,7 @@ public class PlayerStab : PlayerAbility
             {
                 if (collider.TryGetComponent(out IDamagable damagable))
                 {
-                    damagable.TakeDamage(baseDamage, PlayerController);
+                    damagable.TakeDamage(baseDamage, PlayerController, knockBackForce, PlayerController.lastDirection);
                 }
             }
         }
