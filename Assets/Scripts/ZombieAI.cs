@@ -1,7 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
@@ -14,7 +12,6 @@ public class ZombieAI : MonoBehaviour
     private NavMeshAgent Sandalen;
     [SerializeField] private float hungryHungryHippo;
     float verjaardag;
-
 
     private Collider[] targetsInViewRadius;
 
