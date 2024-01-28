@@ -555,6 +555,7 @@ GameObject:
   - component: {fileID: 6234721572723776954}
   - component: {fileID: 3545171835342376733}
   - component: {fileID: 3376995787116359722}
+  - component: {fileID: 4599299044666162822}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -796,6 +797,23 @@ MonoBehaviour:
   abilityCooldown: 6
   controller: {fileID: 9157438368393493075}
   shieldParticle: {fileID: 8913552617787571549, guid: 8542c1adc2b384e4fb4d96e5d484489a,
+    type: 3}
+  particleYOfset: 0
+--- !u!114 &4599299044666162822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4605843369352199751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4de77e2a5d850da4581b239fee3671ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityCooldown: 1
+  levelRange: 8
+  lvlParticle: {fileID: 4688147493135667820, guid: 07c2a420b7aed04499b2d3a8e2f0c53d,
     type: 3}
   particleYOfset: 0
 --- !u!1 &5035783548156724787

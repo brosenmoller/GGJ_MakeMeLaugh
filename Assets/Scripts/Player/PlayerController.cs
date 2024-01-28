@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     private PlayerShield shield;
     private float damageTakenMuliplier = 1;
     private FireBallAbility fireBall;
+    private PlayerLevelUp lvl;
 
     private readonly Dictionary<PlayerActionType, Action<PlayerController>> actionConverter = new()
     {
@@ -52,6 +53,7 @@ public class PlayerController : MonoBehaviour
         { PlayerActionType.Stun, (PlayerController player) => { player.StunSpawnAction();} },
         { PlayerActionType.Shield, (PlayerController player) => { player.ShieldSpawnAction();} },
         { PlayerActionType.Fireball, (PlayerController player) => { player.FireBallAction();} },
+        { PlayerActionType.lvl, (PlayerController player) => { player.LvlAction();} },
         
     };
 
@@ -70,6 +72,7 @@ public class PlayerController : MonoBehaviour
        stun = GetComponent<PlayerStun>();
        shield = GetComponent<PlayerShield>();
        fireBall = GetComponent<FireBallAbility>();
+       lvl = GetComponent<PlayerLevelUp>();
 
         foreach (PlayerControlScheme controlScheme in controlSchemesPerLevel)
         {
@@ -196,6 +199,7 @@ public class PlayerController : MonoBehaviour
     public void HealFieldSpawnAction() => heal.Activate();
     public void StunSpawnAction() => stun.Activate();
     public void ShieldSpawnAction() => shield.Activate();
+    public void LvlAction() => lvl.Activate();
 
     
     public void FireBallAction() => fireBall.Activate();
