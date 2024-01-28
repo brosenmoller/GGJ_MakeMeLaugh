@@ -10,6 +10,7 @@ public class EnemyHealth : MonoBehaviour, IDamagable
     [SerializeField] private Material whiteFlash;
     [SerializeField] private SkinnedMeshRenderer meshRenderer;
     [SerializeField] private Animator animator;
+    [SerializeField] private GameObject XpOrb;
 
     private float health;
     private Material normalMaterial;
@@ -36,7 +37,8 @@ public class EnemyHealth : MonoBehaviour, IDamagable
 
         if (health < 0)
         {
-            player.GiveXp(0.01f);
+            var xp = Instantiate(XpOrb);
+            xp.transform.position = transform.position + new Vector3(Random.Range(-1, 2), 0, Random.Range(-1, 2));
             Die();
         }
     }
