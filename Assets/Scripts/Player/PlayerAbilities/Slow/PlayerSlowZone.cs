@@ -24,6 +24,7 @@ public class PlayerSlowZone : PlayerAbility
             var spawnObj = Instantiate(slowZoneObj);
             spawnObj.transform.position = new Vector3(transform.position.x, transform.position.y + yOfset, transform.position.z);
             spawnObj.GetComponent<SlowZone>().SetSlowVar(slowFactor, slowTime);
+            PlayerController.animator.SetTrigger("MagicAreaAttack");
         }
         else 
         { 

@@ -20,13 +20,13 @@ public class Fireball : MonoBehaviour
     private bool exploded = false;
 
     private Animator anim;
-    private Rigidbody2D rb;
+    private Rigidbody rigidBody;
     private PlayerController playerController;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
+        rigidBody = GetComponent<Rigidbody>();
     }
 
     private void Start()
@@ -49,12 +49,12 @@ public class Fireball : MonoBehaviour
         if (speed != maxSpeed && !exploded)
         {
             float speed = Mathf.Lerp(startSpeed, maxSpeed, Mathf.Pow((elapsedTime / accelerationDuration), 2));
-            rb.velocity = speed * Time.fixedDeltaTime * direction; 
+            rigidBody.velocity = speed * Time.fixedDeltaTime * direction; 
             elapsedTime += Time.fixedDeltaTime;
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collider)
+    private void OnTriggerEnter(Collider collider)
     {
         if (collider.TryGetComponent(out IDamagable damagable))
         {
@@ -68,7 +68,7 @@ public class Fireball : MonoBehaviour
     {
         anim.SetTrigger(explodeParameter);
         exploded = true;
-        rb.velocity = Vector3.zero;
+        rigidBody.velocity = Vector3.zero;
     }
 
     public void Explode()

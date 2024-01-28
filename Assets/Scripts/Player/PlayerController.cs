@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     [Header("References")]
     public PlayerControlUI controlUI;
     public Transform Visuals;
+    public Animator animator;
 
     private Rigidbody rigidBody;
     [HideInInspector] public Vector2 movement;
@@ -35,6 +36,7 @@ public class PlayerController : MonoBehaviour
     private PlayerStun stun;
     private PlayerShield shield;
     private float damageTakenMuliplier = 1;
+    private FireBallAbility fireBall;
 
     private readonly Dictionary<PlayerActionType, Action<PlayerController>> actionConverter = new()
     {
@@ -49,6 +51,8 @@ public class PlayerController : MonoBehaviour
         { PlayerActionType.Heal, (PlayerController player) => { player.HealFieldSpawnAction();} },
         { PlayerActionType.Stun, (PlayerController player) => { player.StunSpawnAction();} },
         { PlayerActionType.Shield, (PlayerController player) => { player.ShieldSpawnAction();} },
+        { PlayerActionType.Fireball, (PlayerController player) => { player.FireBallAction();} },
+        
     };
 
     private void Awake()
@@ -65,6 +69,7 @@ public class PlayerController : MonoBehaviour
        heal = GetComponent<PlayerAreaHeal>();
        stun = GetComponent<PlayerStun>();
        shield = GetComponent<PlayerShield>();
+       fireBall = GetComponent<FireBallAbility>();
 
         foreach (PlayerControlScheme controlScheme in controlSchemesPerLevel)
         {
@@ -92,6 +97,11 @@ public class PlayerController : MonoBehaviour
         if (movement != Vector2.zero)
         {
             lastDirection = direction;
+            if (animator != null) { animator.SetBool("Walking", true); }
+        }
+        else
+        {
+            if (animator != null) { animator.SetBool("Walking", false); }
         }
 
         if (CanMove)
@@ -110,6 +120,11 @@ public class PlayerController : MonoBehaviour
     {
         health -= damage * damageTakenMuliplier;
         UpdateUI();
+
+        if (health > maxHealth) 
+        {
+            health = maxHealth; 
+        }
 
         if (health < 0)
         {
@@ -183,4 +198,5 @@ public class PlayerController : MonoBehaviour
     public void ShieldSpawnAction() => shield.Activate();
 
     
+    public void FireBallAction() => fireBall.Activate();
 }

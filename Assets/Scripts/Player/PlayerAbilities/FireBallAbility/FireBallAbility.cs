@@ -27,8 +27,10 @@ public class FireBallAbility : PlayerAbility
         Vector3 direction = PlayerController.lastDirection;
         StartCoroutine(Knockback(direction * -1f, 9, .1f));
 
-        GameObject fireBall = Instantiate(fireBallPrefab, transform.position + direction * launchOffset, Quaternion.identity);
+        GameObject fireBall = Instantiate(fireBallPrefab, transform.position + launchOffset * direction + new Vector3(0, 3, 0), Quaternion.identity);
         fireBall.GetComponent<Fireball>().SetUpFireBall(outputDamage, knockBackForce, direction, PlayerController);
+
+        PlayerController.animator.SetTrigger("MagicAttack");
 
         shootCooldown = startShootCooldown + Time.time;
     }
