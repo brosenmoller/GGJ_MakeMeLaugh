@@ -10,22 +10,21 @@ public class PlayerStab : PlayerAbility
     [SerializeField] private float knockBackForce;
 
     private float attackCooldown;
-    //public Animator animator;
 
     public override void Activate()
     {
         if (attackCooldown <= Time.time)
         {
-            Debug.Log("Attack");
+            //Debug.Log("Attack");
             attackCooldown = startAttackCooldown + Time.time;
-            //animator.SetBool("Attack", true);
+            PlayerController.animator.SetTrigger("Stab");
 
             Collider[] colliders = Physics.OverlapSphere(transform.position + (PlayerController.lastDirection * attackOffset), attackRadius);
             foreach (Collider collider in colliders)
             {
                 if (collider.TryGetComponent(out IDamagable damagable))
                 {
-                    damagable.TakeDamage(baseDamage, PlayerController, knockBackForce, PlayerController.lastDirection);
+                    damagable.TakeDamage(baseDamage, PlayerController, knockBackForce, PlayerController.lastDirection, Color.white);
                 }
             }
         }

@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 4107219899527822282}
   - component: {fileID: 9004475780763843274}
   - component: {fileID: 830227973538885216}
-  - component: {fileID: 4305588046781835036}
   - component: {fileID: 1928839549935891407}
-  - component: {fileID: 4645649355479730856}
+  - component: {fileID: 1432055968460206335}
   m_Layer: 0
   m_Name: VUURGATOMGHOT
   m_TagString: Untagged
@@ -79,20 +78,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4305588046781835036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5376278543750631487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed68e8e2c5ecbf443af388d7c091972d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slowfactor: 0.5
-  slowtime: 5
 --- !u!114 &1928839549935891407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0949af36cd5aec4409a961f5542f1a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4645649355479730856
+--- !u!114 &1432055968460206335
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,9 +99,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 5376278543750631487}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 912ebb83f5cdcbc4785581392662a8f0, type: 3}
+  m_Script: {fileID: 11500000, guid: 0c8b5efe13ae4cb45a46e4dbb01f69a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireDamge: 0.2
+  burningtime: 5
+  amoundOfBurns: 5
+  DestroyAnimationTrigger: Destroy
+  playerController: {fileID: 0}
+  fireParticle: {fileID: 895813428225537813, guid: 0c6110468cd853e46b339055101dd0ee,
+    type: 3}
+  YParticleOfset: -1
 --- !u!1 &6193689438848240543
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     [Header("References")]
     public PlayerControlUI controlUI;
     public Transform Visuals;
+    public Animator animator;
 
     private Rigidbody rigidBody;
     [HideInInspector] public Vector2 movement;
@@ -30,6 +31,8 @@ public class PlayerController : MonoBehaviour
     private PlayerDash dash;
     private PlayerStab stab;
     private PlayerSlowZone slow;
+    private PlayerFireFieldAbility fireHole;
+    private FireBallAbility fireBall;
 
     private readonly Dictionary<PlayerActionType, Action<PlayerController>> actionConverter = new()
     {
@@ -40,6 +43,9 @@ public class PlayerController : MonoBehaviour
         { PlayerActionType.Dash, (PlayerController player) => { player.DashAction();} },
         { PlayerActionType.Stab, (PlayerController player) => { player.StabAction();} },
         { PlayerActionType.Slow, (PlayerController player) => { player.SlowAction();} },
+        { PlayerActionType.Firepit, (PlayerController player) => { player.FireFieldSpawnAction();} },
+        { PlayerActionType.Fireball, (PlayerController player) => { player.FireBallAction();} },
+        
     };
 
     private void Awake()
@@ -52,6 +58,8 @@ public class PlayerController : MonoBehaviour
        dash = GetComponent<PlayerDash>();
        stab = GetComponent<PlayerStab>();
        slow = GetComponent<PlayerSlowZone>();
+       fireHole = GetComponent<PlayerFireFieldAbility>();
+       fireBall = GetComponent<FireBallAbility>();
 
         foreach (PlayerControlScheme controlScheme in controlSchemesPerLevel)
         {
@@ -79,6 +87,11 @@ public class PlayerController : MonoBehaviour
         if (movement != Vector2.zero)
         {
             lastDirection = direction;
+            if (animator != null) { animator.SetBool("Walking", true); }
+        }
+        else
+        {
+            if (animator != null) { animator.SetBool("Walking", false); }
         }
 
         if (CanMove)
@@ -97,6 +110,11 @@ public class PlayerController : MonoBehaviour
     {
         health -= damage;
         UpdateUI();
+
+        if (health > maxHealth) 
+        {
+            health = maxHealth; 
+        }
 
         if (health < 0)
         {
@@ -157,4 +175,7 @@ public class PlayerController : MonoBehaviour
     public void DashAction() => dash.Activate();
     public void StabAction() => stab.Activate();
     public void SlowAction() => slow.Activate();
+
+    public void FireFieldSpawnAction() => fireHole.Activate();
+    public void FireBallAction() => fireBall.Activate();
 }

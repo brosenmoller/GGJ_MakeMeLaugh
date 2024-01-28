@@ -102,8 +102,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 19
   viewRadius: 100
-  timeToAttack: 1
-  AttackRange: 0
+  timeToAttack: 1.5
+  AttackRange: 2
   attackDamage: 10
   attackDamageOpDeMaan: 15
 --- !u!54 &7072914276896255570
@@ -149,6 +149,7 @@ MonoBehaviour:
   getHitKnockbackMultiplier: 1
   whiteFlash: {fileID: 2100000, guid: 046b9953ae3a8264e9712e2472e0b18b, type: 2}
   meshRenderer: {fileID: 8400013307129209566}
+  animator: {fileID: 5016161831742613598}
 --- !u!1001 &1510510388752717263
 PrefabInstance:
   m_ObjectHideFlags: 0
