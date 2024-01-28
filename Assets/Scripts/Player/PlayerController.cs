@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
     {
         movement = Vector2.zero;
 
-        foreach (PlayerControlScheme.PlayerAction playerAction in controlSchemesPerLevel[level].AllActions) 
+        foreach (PlayerControlScheme.PlayerAction playerAction in controlSchemesPerLevel[level].AllActions)
         {
             if (Input.GetKey(playerAction.key))
             {
@@ -132,7 +132,7 @@ public class PlayerController : MonoBehaviour
         if (health < 0)
         {
             level--;
-            if (level < 1) { level = 1; }
+            if (level < 1) { level = 0; }
         }
     }
 
@@ -154,15 +154,15 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateUI()
     {
-        controlUI.UpText.text = controlSchemesPerLevel[level].Up.key.ToString();
-        controlUI.DownText.text = controlSchemesPerLevel[level].Down.key.ToString();
-        controlUI.RightText.text = controlSchemesPerLevel[level].Right.key.ToString();
-        controlUI.LeftText.text = controlSchemesPerLevel[level].Left.key.ToString();
+        controlUI.UpText.text = controlSchemesPerLevel[level].Up.key == KeyCode.UpArrow ? "^" : controlSchemesPerLevel[level].Up.key.ToString();
+        controlUI.DownText.text = controlSchemesPerLevel[level].Down.key == KeyCode.DownArrow ? "v" : controlSchemesPerLevel[level].Down.key.ToString();
+        controlUI.RightText.text = controlSchemesPerLevel[level].Right.key == KeyCode.RightArrow ? ">" : controlSchemesPerLevel[level].Right.key.ToString();
+        controlUI.LeftText.text = controlSchemesPerLevel[level].Left.key == KeyCode.LeftArrow ? "<" : controlSchemesPerLevel[level].Left.key.ToString();
 
         controlUI.Special1Text.text = controlSchemesPerLevel[level].Special1.key.ToString();
         controlUI.Special2Text.text = controlSchemesPerLevel[level].Special2.key.ToString();
         controlUI.levelSlider.value = xp;
-        controlUI.levelIndicator.text = level.ToString();
+        controlUI.levelIndicator.text = (level + 1).ToString();
         controlUI.healthSlider.value = health / maxHealth;
     }
 
