@@ -106,6 +106,9 @@ MonoBehaviour:
   stunDamage: 3
   player: {fileID: 0}
   sphereCollider: {fileID: 9004475780763843274}
+  stunParticle: {fileID: 8913552617787571549, guid: f3980c2cef8407b46895e39dc6d3e5d7,
+    type: 3}
+  particleYOfset: 4
 --- !u!1 &6193689438848240543
 GameObject:
   m_ObjectHideFlags: 0

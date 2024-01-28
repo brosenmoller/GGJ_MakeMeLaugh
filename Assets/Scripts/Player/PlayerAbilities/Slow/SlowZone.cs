@@ -6,7 +6,9 @@ using UnityEngine.AI;
 public class SlowZone : MonoBehaviour
 {
     [SerializeField] float slowfactor = 0.7f; 
-    [SerializeField] float slowtime = 3f; 
+    [SerializeField] float slowtime = 3f;
+    [SerializeField] GameObject stunParticle;
+    [SerializeField] float particleYOfset;
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out NavMeshAgent nev))
@@ -22,6 +24,10 @@ public class SlowZone : MonoBehaviour
                 float tempSpeed = nev.speed;
                 temp.InvokeSlowReset(nev,slowtime,tempSpeed);
                 nev.speed = nev.speed * slowfactor;
+                var tempP = Instantiate(stunParticle);
+                tempP.transform.SetParent(nev.transform);
+                tempP.transform.position = new Vector3(nev.transform.position.x, nev.transform.position.y + particleYOfset, nev.transform.position.z);
+                Destroy(tempP, slowtime);
             }
         }
     }

@@ -2,17 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerLevelUp : MonoBehaviour
+public class PlayerLevelUp : PlayerAbility
 {
-    // Start is called before the first frame update
-    void Start()
+
+    [SerializeField] private float abilityCooldown;
+    [SerializeField] private float levelRange = 8;
+    [SerializeField] GameObject lvlParticle;
+    [SerializeField] float particleYOfset;
+    private bool abilityActive = true;
+    public override void Activate()
     {
-        
+        if (abilityActive)
+        {
+            abilityActive = false;
+            new Timer(abilityCooldown, () => BenGaatDoodDoorHongerigeEgels());
+            Collider[] temp = Physics.OverlapSphere(transform.position, 5);
+            foreach (Collider col in temp) 
+            { 
+                if(col.TryGetComponent(out PlayerController player)) 
+                {
+                    player.LevelUp();
+                }
+            }
+            var tempP = Instantiate(lvlParticle);
+            tempP.transform.SetParent(transform);
+            tempP.transform.position = new Vector3(transform.position.x, transform.position.y + particleYOfset, transform.position.z);
+            Destroy(tempP, 1);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void BenGaatDoodDoorHongerigeEgels()
     {
-        
+        abilityActive = true;
     }
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawWireSphere(transform.position, levelRange);
+    //}
 }
+

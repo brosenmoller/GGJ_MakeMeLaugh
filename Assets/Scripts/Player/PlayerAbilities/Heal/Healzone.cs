@@ -7,6 +7,8 @@ public class Healzone : MonoBehaviour
     float timeBetweenHeal = 0.1f;
     bool endOfHeal = false;
     string animeStringName = "Destroy";
+    [SerializeField] GameObject stunParticle;
+    [SerializeField] float particleYOfset;
     public void startHeal(float healAmount,float totalHealTime, float timeBetweenHeal) 
     {
         this.healAmount = healAmount;
@@ -29,6 +31,10 @@ public class Healzone : MonoBehaviour
             if(c.TryGetComponent(out PlayerController player)) 
             {
                 player.TakeDamage(-healAmount);
+                var tempP = Instantiate(stunParticle);
+                tempP.transform.SetParent(c.transform);
+                tempP.transform.position = new Vector3(c.transform.position.x, c.transform.position.y + particleYOfset, c.transform.position.z);
+                Destroy(tempP, 3);
                 //Debug.Log(c.gameObject.name);
             }
             

@@ -92,6 +92,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slowfactor: 0.5
   slowtime: 5
+  stunParticle: {fileID: 895813428225537813, guid: 4ce352d62ce868547b2d5ca7329b2e3a,
+    type: 3}
+  particleYOfset: 0
 --- !u!114 &1928839549935891407
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -68,6 +68,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d46a86db8a9083741bcd7f220b733b79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stunParticle: {fileID: 5874594467842370501, guid: 9efc27410cea9394bad5a05e187ce760,
+    type: 3}
+  particleYOfset: 0
 --- !u!114 &7310812398994304061
 MonoBehaviour:
   m_ObjectHideFlags: 0
