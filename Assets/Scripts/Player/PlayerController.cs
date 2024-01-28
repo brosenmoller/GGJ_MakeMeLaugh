@@ -104,7 +104,10 @@ public class PlayerController : MonoBehaviour
         health -= damage;
         UpdateUI();
 
-        if (health > maxHealth) { health = maxHealth; }
+        if (health > maxHealth) 
+        {
+            health = maxHealth; 
+        }
 
         if (health < 0)
         {
