@@ -16,7 +16,7 @@ public class PlayerStab : PlayerAbility
     {
         if (attackCooldown <= Time.time)
         {
-            Debug.Log("Attack");
+            //Debug.Log("Attack");
             attackCooldown = startAttackCooldown + Time.time;
             //animator.SetBool("Attack", true);
 
@@ -25,7 +25,7 @@ public class PlayerStab : PlayerAbility
             {
                 if (collider.TryGetComponent(out IDamagable damagable))
                 {
-                    damagable.TakeDamage(baseDamage, PlayerController, knockBackForce, PlayerController.lastDirection);
+                    damagable.TakeDamage(baseDamage, PlayerController, knockBackForce, PlayerController.lastDirection, Color.white);
                 }
             }
         }
