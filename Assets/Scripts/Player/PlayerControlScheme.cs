@@ -14,6 +14,9 @@ public enum PlayerActionType
     Dash = 6,
     Stab = 7,
     Slow = 8,
+    Heal = 9,
+    Stun = 10,
+    Shield = 11,
 }
 
 [Serializable]

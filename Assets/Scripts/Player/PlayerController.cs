@@ -32,6 +32,10 @@ public class PlayerController : MonoBehaviour
     private PlayerStab stab;
     private PlayerSlowZone slow;
     private PlayerFireFieldAbility fireHole;
+    private PlayerAreaHeal heal;
+    private PlayerStun stun;
+    private PlayerShield shield;
+    private float damageTakenMuliplier = 1;
     private FireBallAbility fireBall;
 
     private readonly Dictionary<PlayerActionType, Action<PlayerController>> actionConverter = new()
@@ -44,6 +48,9 @@ public class PlayerController : MonoBehaviour
         { PlayerActionType.Stab, (PlayerController player) => { player.StabAction();} },
         { PlayerActionType.Slow, (PlayerController player) => { player.SlowAction();} },
         { PlayerActionType.Firepit, (PlayerController player) => { player.FireFieldSpawnAction();} },
+        { PlayerActionType.Heal, (PlayerController player) => { player.HealFieldSpawnAction();} },
+        { PlayerActionType.Stun, (PlayerController player) => { player.StunSpawnAction();} },
+        { PlayerActionType.Shield, (PlayerController player) => { player.ShieldSpawnAction();} },
         { PlayerActionType.Fireball, (PlayerController player) => { player.FireBallAction();} },
         
     };
@@ -59,6 +66,9 @@ public class PlayerController : MonoBehaviour
        stab = GetComponent<PlayerStab>();
        slow = GetComponent<PlayerSlowZone>();
        fireHole = GetComponent<PlayerFireFieldAbility>();
+       heal = GetComponent<PlayerAreaHeal>();
+       stun = GetComponent<PlayerStun>();
+       shield = GetComponent<PlayerShield>();
        fireBall = GetComponent<FireBallAbility>();
 
         foreach (PlayerControlScheme controlScheme in controlSchemesPerLevel)
@@ -108,7 +118,7 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        health -= damage;
+        health -= damage * damageTakenMuliplier;
         UpdateUI();
 
         if (health > maxHealth) 
@@ -172,11 +182,22 @@ public class PlayerController : MonoBehaviour
     {
         movement.x -= 1;
     }
+
+    public void ChangeDamageTakeMultiplier(float newMultiplier) 
+    {
+        damageTakenMuliplier = newMultiplier;
+    }
     
     public void DashAction() => dash.Activate();
     public void StabAction() => stab.Activate();
     public void SlowAction() => slow.Activate();
 
     public void FireFieldSpawnAction() => fireHole.Activate();
+
+    public void HealFieldSpawnAction() => heal.Activate();
+    public void StunSpawnAction() => stun.Activate();
+    public void ShieldSpawnAction() => shield.Activate();
+
+    
     public void FireBallAction() => fireBall.Activate();
 }

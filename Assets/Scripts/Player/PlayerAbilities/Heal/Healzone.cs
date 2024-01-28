@@ -4,12 +4,13 @@ public class Healzone : MonoBehaviour
 {
     float healRadius = 7;
     float healAmount = 1;
-    bool endOfHeal = false;
     float timeBetweenHeal = 0.1f;
-    string animeStringName = "Damage";
-    public void startHeal(float healAmount,float totalHealTime) 
+    bool endOfHeal = false;
+    string animeStringName = "Destroy";
+    public void startHeal(float healAmount,float totalHealTime, float timeBetweenHeal) 
     {
         this.healAmount = healAmount;
+        this.timeBetweenHeal = timeBetweenHeal;
         new Timer(totalHealTime, () => stopHeal());
         UpdateHeal();
     }
@@ -25,12 +26,13 @@ public class Healzone : MonoBehaviour
         Collider[] temp = Physics.OverlapSphere(transform.position,healRadius);
         foreach (Collider c in temp) 
         { 
-            if(TryGetComponent(out PlayerController player)) 
+            if(c.TryGetComponent(out PlayerController player)) 
             {
                 player.TakeDamage(-healAmount);
+                //Debug.Log(c.gameObject.name);
             }
+            
         }
-
         new Timer(timeBetweenHeal,()=>UpdateHeal());
     }
     void stopHeal() 
