@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1636626895845808037}
   - component: {fileID: 3337195162229582086}
   - component: {fileID: 7072914276896255570}
+  - component: {fileID: 330595678801097908}
   m_Layer: 0
   m_Name: Zombie broer
   m_TagString: Untagged
@@ -101,8 +102,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 19
   viewRadius: 100
-  timeToAttack: 1
-  hungryHungryHippo: 1.4
+  timeToAttack: 1.5
+  AttackRange: 2
   attackDamage: 10
   attackDamageOpDeMaan: 15
 --- !u!54 &7072914276896255570
@@ -128,10 +129,27 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &330595678801097908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196110438739058807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f6cb71172fcd748958d8915d0effc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 30
+  getHitKnockbackMultiplier: 1
+  whiteFlash: {fileID: 2100000, guid: 046b9953ae3a8264e9712e2472e0b18b, type: 2}
+  meshRenderer: {fileID: 8400013307129209566}
+  animator: {fileID: 5016161831742613598}
 --- !u!1001 &1510510388752717263
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -639,6 +657,12 @@ Transform:
 --- !u!95 &5016161831742613598 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 79822eb59c87a7f4eb1ee9427bd6d6af,
+    type: 3}
+  m_PrefabInstance: {fileID: 1510510388752717263}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &8400013307129209566 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -2277485870148143343, guid: 79822eb59c87a7f4eb1ee9427bd6d6af,
     type: 3}
   m_PrefabInstance: {fileID: 1510510388752717263}
   m_PrefabAsset: {fileID: 0}
