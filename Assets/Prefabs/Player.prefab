@@ -616,6 +616,7 @@ MonoBehaviour:
     AllActions: []
   controlUI: {fileID: 0}
   Visuals: {fileID: 0}
+  animator: {fileID: 0}
   movement: {x: 0, y: 0}
   lastDirection: {x: 0, y: 0, z: 0}
   CanMove: 1
@@ -794,6 +795,9 @@ MonoBehaviour:
   shieldDuration: 4
   abilityCooldown: 6
   controller: {fileID: 9157438368393493075}
+  shieldParticle: {fileID: 8913552617787571549, guid: 8542c1adc2b384e4fb4d96e5d484489a,
+    type: 3}
+  particleYOfset: 0
 --- !u!1 &5035783548156724787
 GameObject:
   m_ObjectHideFlags: 0
