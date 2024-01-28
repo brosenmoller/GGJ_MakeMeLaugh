@@ -118,7 +118,8 @@ public class PlayerController : MonoBehaviour
 
         if (health < 0)
         {
-            Debug.Log("Player Death");
+            level--;
+            if (level < 1) { level = 1; }
         }
     }
 
