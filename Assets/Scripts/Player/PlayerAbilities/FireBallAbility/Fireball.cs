@@ -58,7 +58,7 @@ public class Fireball : MonoBehaviour
     {
         if (collider.TryGetComponent(out IDamagable damagable))
         {
-            damagable.TakeDamage(damage, playerController, knockBackForce, direction);
+            damagable.TakeDamage(damage, playerController, knockBackForce, direction, Color.white);
             CancelInvoke(nameof(StartExplosion));
             StartExplosion();
         }

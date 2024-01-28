@@ -9,12 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4107219899527822282}
-  - component: {fileID: 9004475780763843274}
   - component: {fileID: 830227973538885216}
-  - component: {fileID: 1928839549935891407}
-  - component: {fileID: 1432055968460206335}
+  - component: {fileID: 7874713103404833052}
+  - component: {fileID: 7310812398994304061}
   m_Layer: 0
-  m_Name: VUURGATOMGHOT
+  m_Name: HealARea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,27 +35,6 @@ Transform:
   - {fileID: 2104066028938548677}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &9004475780763843274
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5376278543750631487}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.68
-  m_Center: {x: 0, y: -0.47, z: 0}
 --- !u!95 &830227973538885216
 Animator:
   serializedVersion: 5
@@ -78,7 +56,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1928839549935891407
+--- !u!114 &7874713103404833052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5376278543750631487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d46a86db8a9083741bcd7f220b733b79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7310812398994304061
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,26 +80,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0949af36cd5aec4409a961f5542f1a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1432055968460206335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5376278543750631487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c8b5efe13ae4cb45a46e4dbb01f69a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fireDamge: 0.2
-  burningtime: 5
-  amoundOfBurns: 5
-  DestroyAnimationTrigger: Destroy
-  playerController: {fileID: 0}
-  fireParticle: {fileID: 895813428225537813, guid: 0c6110468cd853e46b339055101dd0ee,
-    type: 3}
-  YParticleOfset: -1
 --- !u!1 &6193689438848240543
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,7 +106,7 @@ Transform:
   m_GameObject: {fileID: 6193689438848240543}
   serializedVersion: 2
   m_LocalRotation: {x: -0.707107, y: -0, z: -0, w: 0.70710665}
-  m_LocalPosition: {x: 0, y: -0.37, z: 0}
+  m_LocalPosition: {x: 0.026, y: 0.007, z: 0.174}
   m_LocalScale: {x: 4.225315, y: 4.225315, z: 4.225315}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -184,7 +154,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -1432119140, guid: e181ad954e118884db0fd2bca668a3fd, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.3129902, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
