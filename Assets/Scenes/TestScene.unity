@@ -1029,6 +1029,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie broer (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 196110438739058807, guid: d76bf67a670389c4caaee7673fa9da5c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 313500621028226507, guid: d76bf67a670389c4caaee7673fa9da5c,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -3845,6 +3850,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie broer (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 196110438739058807, guid: d76bf67a670389c4caaee7673fa9da5c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 313500621028226507, guid: d76bf67a670389c4caaee7673fa9da5c,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -4895,6 +4905,55 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d76bf67a670389c4caaee7673fa9da5c, type: 3}
+--- !u!1 &685114990
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 685114991}
+  - component: {fileID: 685114992}
+  m_Layer: 0
+  m_Name: ZombieSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &685114991
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685114990}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 9.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &685114992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685114990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ee69a5cf1bc1e24399ac2e77f062b46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zombie: {fileID: 196110438739058807, guid: d76bf67a670389c4caaee7673fa9da5c, type: 3}
+  zombieFallInterval: 6
+  reduceIntervalAmount: 0.2
+  reduceIntervalWhen: 3
+  IntervalMultiplier: {x: 0.2, y: 2}
 --- !u!1 &686199329
 GameObject:
   m_ObjectHideFlags: 0
@@ -8933,7 +8992,7 @@ Transform:
   m_GameObject: {fileID: 1406312701}
   serializedVersion: 2
   m_LocalRotation: {x: -0.6988639, y: -0.048625764, z: 0.047728505, w: 0.712002}
-  m_LocalPosition: {x: -0.7, y: 6.1, z: -0.5}
+  m_LocalPosition: {x: -0.59, y: 5.31, z: -0.51}
   m_LocalScale: {x: 0.4060346, y: 0.40603477, z: 0.40603468}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9087,6 +9146,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Zombie broer (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 196110438739058807, guid: d76bf67a670389c4caaee7673fa9da5c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 313500621028226507, guid: d76bf67a670389c4caaee7673fa9da5c,
         type: 3}
@@ -10405,6 +10469,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Zombie broer (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 196110438739058807, guid: d76bf67a670389c4caaee7673fa9da5c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 313500621028226507, guid: d76bf67a670389c4caaee7673fa9da5c,
         type: 3}
@@ -12562,6 +12631,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie broer (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 196110438739058807, guid: d76bf67a670389c4caaee7673fa9da5c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 313500621028226507, guid: d76bf67a670389c4caaee7673fa9da5c,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -13931,6 +14005,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Zombie broer
+      objectReference: {fileID: 0}
+    - target: {fileID: 196110438739058807, guid: d76bf67a670389c4caaee7673fa9da5c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 313500621028226507, guid: d76bf67a670389c4caaee7673fa9da5c,
         type: 3}
@@ -17484,3 +17563,4 @@ SceneRoots:
   - {fileID: 1433434200}
   - {fileID: 1677203357}
   - {fileID: 154100303}
+  - {fileID: 685114991}

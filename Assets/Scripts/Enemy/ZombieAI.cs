@@ -1,4 +1,5 @@
  using System;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
@@ -52,9 +53,15 @@ public class ZombieAI : MonoBehaviour
             }
             return;
         }
-        var path = FindBestPath();
-        Sandalen.SetPath(path);
 
+        if (NavMesh.SamplePosition(transform.position, out NavMeshHit hit, 2, NavMesh.AllAreas))
+        {
+            var path = FindBestPath();
+
+            if (path == null || path.status != NavMeshPathStatus.PathComplete) { return; }
+
+            Sandalen.SetPath(path);
+        }
     }
 
     public void attack() 
