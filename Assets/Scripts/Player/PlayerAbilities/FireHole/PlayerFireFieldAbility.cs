@@ -15,7 +15,7 @@ public class PlayerFireFieldAbility : PlayerAbility
     [SerializeField] float circelDespawnTime = 5f;
 
     [SerializeField] private float abilityCooldown = 6f;
-    [SerializeField] private float yOfset = 2.3f;
+    [SerializeField] private float yOfset = 4.32f;
     private bool abilityActive = true;
     public override void Activate()
     {
