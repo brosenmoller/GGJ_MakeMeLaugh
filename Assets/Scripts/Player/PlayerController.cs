@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     [Header("References")]
     public PlayerControlUI controlUI;
     public Transform Visuals;
+    public Animator animator;
 
     private Rigidbody rigidBody;
     [HideInInspector] public Vector2 movement;
@@ -79,6 +80,11 @@ public class PlayerController : MonoBehaviour
         if (movement != Vector2.zero)
         {
             lastDirection = direction;
+            if (animator != null) { animator.SetBool("Walking", true); }
+        }
+        else
+        {
+            if (animator != null) { animator.SetBool("Walking", false); }
         }
 
         if (CanMove)
@@ -97,6 +103,8 @@ public class PlayerController : MonoBehaviour
     {
         health -= damage;
         UpdateUI();
+
+        if (health > maxHealth) { health = maxHealth; }
 
         if (health < 0)
         {

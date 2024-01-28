@@ -10,7 +10,6 @@ public class PlayerStab : PlayerAbility
     [SerializeField] private float knockBackForce;
 
     private float attackCooldown;
-    //public Animator animator;
 
     public override void Activate()
     {
@@ -18,7 +17,7 @@ public class PlayerStab : PlayerAbility
         {
             Debug.Log("Attack");
             attackCooldown = startAttackCooldown + Time.time;
-            //animator.SetBool("Attack", true);
+            PlayerController.animator.SetTrigger("Stab");
 
             Collider[] colliders = Physics.OverlapSphere(transform.position + (PlayerController.lastDirection * attackOffset), attackRadius);
             foreach (Collider collider in colliders)
