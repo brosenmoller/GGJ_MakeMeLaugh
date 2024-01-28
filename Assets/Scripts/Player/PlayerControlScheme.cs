@@ -17,6 +17,7 @@ public enum PlayerActionType
     Heal = 9,
     Stun = 10,
     Shield = 11,
+    lvl = 12,
 }
 
 [Serializable]

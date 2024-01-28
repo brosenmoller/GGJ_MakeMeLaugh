@@ -9,6 +9,8 @@ public class StunZone : MonoBehaviour
     [SerializeField] float stunDamage = 3f;
     [SerializeField] PlayerController player;
     [SerializeField] SphereCollider sphereCollider;
+    [SerializeField] GameObject stunParticle;
+    [SerializeField] float particleYOfset;
 
     public void Instanciate(float stunTime,float stunDamage,PlayerController player) 
     { 
@@ -39,6 +41,10 @@ public class StunZone : MonoBehaviour
             if(nev.gameObject.TryGetComponent(out EnemyHealth health)) 
             {
                 health.TakeDamage(stunDamage,player,10,(transform.position - other.transform.position).normalized,Color.white);
+                var tempP = Instantiate(stunParticle);
+                tempP.transform.SetParent(nev.transform);
+                tempP.transform.position = new Vector3(nev.transform.position.x,nev.transform.position.y + particleYOfset,nev.transform.position.z);
+                Destroy(tempP,stunTime);
             }
         }
     }
