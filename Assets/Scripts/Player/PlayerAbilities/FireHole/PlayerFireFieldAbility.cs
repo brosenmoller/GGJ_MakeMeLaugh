@@ -27,6 +27,7 @@ public class PlayerFireFieldAbility : PlayerAbility
             var spawnObj = Instantiate(fireZoneObj);
             spawnObj.transform.position = new Vector3(transform.position.x, transform.position.y + yOfset, transform.position.z);
             spawnObj.GetComponent<FireZone>().StartFire(circelDespawnTime, burningtime, fireDamge, amoundOfBurns,playerController);
+            PlayerController.animator.SetTrigger("MagicAreaAttack");
         }
         else
         {

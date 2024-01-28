@@ -30,6 +30,8 @@ public class FireBallAbility : PlayerAbility
         GameObject fireBall = Instantiate(fireBallPrefab, transform.position + launchOffset * direction + new Vector3(0, 3, 0), Quaternion.identity);
         fireBall.GetComponent<Fireball>().SetUpFireBall(outputDamage, knockBackForce, direction, PlayerController);
 
+        PlayerController.animator.SetTrigger("MagicAttack");
+
         shootCooldown = startShootCooldown + Time.time;
     }
 
