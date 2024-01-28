@@ -48,7 +48,7 @@ public class ZombieAI : MonoBehaviour
             {
                 animator.SetTrigger("Attack");
                 canAttack = false;
-                new Timer(timeToAttack, () => resetAttack());
+                new Timer(timeToAttack, () => attack());
             }
             return;
         }
@@ -60,10 +60,6 @@ public class ZombieAI : MonoBehaviour
     public void attack() 
     {
         Attack(ExtraAIAtributes.nearestplayerAttack(transform, AttackRange, targetMask));
-    }
-
-    private void resetAttack()
-    {
         canAttack = true;
     }
 
