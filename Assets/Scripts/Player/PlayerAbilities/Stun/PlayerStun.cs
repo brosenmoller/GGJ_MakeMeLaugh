@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAreaHeal : PlayerAbility
+public class PlayerStun : PlayerAbility
 {
-    [SerializeField] GameObject healZoneObj;
-    [SerializeField] float yOfset;
-
-    [SerializeField] float healAmount = 1;
-    [SerializeField] float timeBetweenHeal = 0.1f;
-    [SerializeField] float totalHealFieldTime;
-    [SerializeField] float abilityCooldown = 1;
-    bool abilityActive = true;
+    [Header("Assign dit BITCH")]
+    [SerializeField] private GameObject stunZoneObj;
+    [SerializeField] private float stunTime = 5;
+    [SerializeField] private float stunDamage = 1;
+    [SerializeField] private float abilityCooldown = 6f;
+    [SerializeField] private float yOfset = 2.3f;
+    [SerializeField] private PlayerController player;
+    private bool abilityActive = true;
     public override void Activate()
     {
         //Debug.Log("A HOPELESS ROMANTIC ALL MY LIFE");
@@ -19,17 +19,20 @@ public class PlayerAreaHeal : PlayerAbility
         {
             abilityActive = false;
             new Timer(abilityCooldown, () => BenGaatDoodDoorHongerigeEgels());
-            var spawnObj = Instantiate(healZoneObj);
+            var spawnObj = Instantiate(stunZoneObj);
             spawnObj.transform.position = new Vector3(transform.position.x, transform.position.y + yOfset, transform.position.z);
-            spawnObj.GetComponent<Healzone>().startHeal(healAmount,totalHealFieldTime,timeBetweenHeal);
+            spawnObj.GetComponent<StunZone>().Instanciate(stunTime,stunDamage,player);
         }
         else
         {
             //Fail audio ofzo?
         }
+        //seks? sure
     }
+
     private void BenGaatDoodDoorHongerigeEgels()
     {
         abilityActive = true;
     }
+
 }
