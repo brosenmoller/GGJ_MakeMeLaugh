@@ -552,6 +552,7 @@ GameObject:
   - component: {fileID: 6300658997514724109}
   - component: {fileID: 373906435333123058}
   - component: {fileID: 2822112780506350990}
+  - component: {fileID: 8570345820140458191}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -613,6 +614,7 @@ MonoBehaviour:
     AllActions: []
   controlUI: {fileID: 0}
   Visuals: {fileID: 0}
+  animator: {fileID: 0}
   movement: {x: 0, y: 0}
   lastDirection: {x: 0, y: 0, z: 0}
   CanMove: 1
@@ -737,6 +739,24 @@ MonoBehaviour:
   circelDespawnTime: 5
   abilityCooldown: 6
   yOfset: 2.3
+--- !u!114 &8570345820140458191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4605843369352199751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a57ceef95528647910aa4778edcb0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  launchOffset: 1
+  startShootCooldown: 1
+  outputDamage: 20
+  knockBackForce: 2
+  fireBallPrefab: {fileID: 757509527688032465, guid: 732f4c766e8854c4e9f42276ad87a8a4,
+    type: 3}
 --- !u!1 &5035783548156724787
 GameObject:
   m_ObjectHideFlags: 0

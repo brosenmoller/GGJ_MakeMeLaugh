@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     private PlayerStab stab;
     private PlayerSlowZone slow;
     private PlayerFireFieldAbility fireHole;
+    private FireBallAbility fireBall;
 
     private readonly Dictionary<PlayerActionType, Action<PlayerController>> actionConverter = new()
     {
@@ -43,6 +44,8 @@ public class PlayerController : MonoBehaviour
         { PlayerActionType.Stab, (PlayerController player) => { player.StabAction();} },
         { PlayerActionType.Slow, (PlayerController player) => { player.SlowAction();} },
         { PlayerActionType.Firepit, (PlayerController player) => { player.FireFieldSpawnAction();} },
+        { PlayerActionType.Fireball, (PlayerController player) => { player.FireBallAction();} },
+        
     };
 
     private void Awake()
@@ -56,6 +59,7 @@ public class PlayerController : MonoBehaviour
        stab = GetComponent<PlayerStab>();
        slow = GetComponent<PlayerSlowZone>();
        fireHole = GetComponent<PlayerFireFieldAbility>();
+       fireBall = GetComponent<FireBallAbility>();
 
         foreach (PlayerControlScheme controlScheme in controlSchemesPerLevel)
         {
@@ -173,4 +177,5 @@ public class PlayerController : MonoBehaviour
     public void SlowAction() => slow.Activate();
 
     public void FireFieldSpawnAction() => fireHole.Activate();
+    public void FireBallAction() => fireBall.Activate();
 }
