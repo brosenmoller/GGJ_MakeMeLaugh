@@ -16,7 +16,7 @@ public class PlayerLevelUp : PlayerAbility
         {
             abilityActive = false;
             new Timer(abilityCooldown, () => BenGaatDoodDoorHongerigeEgels());
-            Collider[] temp = Physics.OverlapSphere(transform.position, 5);
+            Collider[] temp = Physics.OverlapSphere(transform.position,levelRange);
             foreach (Collider col in temp) 
             { 
                 if(col.TryGetComponent(out PlayerController player)) 

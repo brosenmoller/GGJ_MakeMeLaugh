@@ -131,6 +131,7 @@ public class PlayerController : MonoBehaviour
 
         if (health < 0)
         {
+            gameObject.SetActive(false);
             level--;
             if (level < 1) { level = 0; }
         }
@@ -144,6 +145,11 @@ public class PlayerController : MonoBehaviour
         xp = 0;
         level++;
         UpdateUI();
+    }
+
+    public void ResertHealth() 
+    {
+        health = maxHealth;
     }
 
     public void GiveXp(float xp)
