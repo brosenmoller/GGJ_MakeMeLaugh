@@ -9,6 +9,7 @@ public class EnemyHealth : MonoBehaviour, IDamagable
     [Header("References")]
     [SerializeField] private Material whiteFlash;
     [SerializeField] private SkinnedMeshRenderer meshRenderer;
+    [SerializeField] private Animator animator;
 
     private float health;
     private Material normalMaterial;
@@ -42,7 +43,8 @@ public class EnemyHealth : MonoBehaviour, IDamagable
 
     public void Die()
     {
-        Destroy(gameObject);
+        animator.SetBool("Dead", true);
+        Destroy(gameObject, 3.3f);
     }
 }
 
