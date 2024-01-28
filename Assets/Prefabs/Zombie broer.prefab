@@ -150,7 +150,7 @@ MonoBehaviour:
   whiteFlash: {fileID: 2100000, guid: 046b9953ae3a8264e9712e2472e0b18b, type: 2}
   meshRenderer: {fileID: 8400013307129209566}
   animator: {fileID: 5016161831742613598}
-  XpOrb: {fileID: 4893299874081662132, guid: 29bcf3d463f52de4d9fa5ec848d81aee, type: 3}
+  XpOrb: {fileID: 4893299874081662132, guid: efac7f7cb75365c4a92ecd6a007cf9ee, type: 3}
 --- !u!1001 &1510510388752717263
 PrefabInstance:
   m_ObjectHideFlags: 0
